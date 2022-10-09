@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Component\Tools\Procent;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -9,9 +10,16 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class Products extends AbstractController
 {
+    public function __construct()
+    {
+    }
+
     #[Route('/products/{id<\d>}/lowest-price', name: '', methods: ['POST'])]
     public function lowestPrice(Request $request,int $id): Response
     {
+
+
+
         if ($request->headers->has(''))
         return new Response(
             [
