@@ -10,14 +10,15 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class Products extends AbstractController
 {
-    public function __construct()
+    public function __construct(private readonly Procent)
     {
     }
 
     #[Route('/products/{id<\d>}/lowest-price', name: '', methods: ['POST'])]
     public function lowestPrice(Request $request,int $id): Response
     {
-
+        $data = '3.15';
+        $result = Procent::from($data);
 
 
         if ($request->headers->has(''))
