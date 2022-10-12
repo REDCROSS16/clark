@@ -163,6 +163,5 @@ class LowestPriceEnquiry implements PromotionEnquiryInterface
      */
     public function setPromotionName(?string $promotionName): void
     {
-        $this->promotionName = $promotionName;
     }
 }

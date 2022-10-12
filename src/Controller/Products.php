@@ -34,7 +34,7 @@ class Products extends AbstractController
 //        2. pass the enquire into a promotions filter
 //        3. return the modified enquire
 
-        return new JsonResponse($result, 200);
+//        return new JsonResponse($result, 200);
     }
     
     #[Route('/products/{id<\d>}/promotions', name: 'promotions', methods: ['GET'])]
