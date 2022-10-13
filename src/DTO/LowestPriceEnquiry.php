@@ -164,4 +164,9 @@ class LowestPriceEnquiry implements PromotionEnquiryInterface
     public function setPromotionName(?string $promotionName): void
     {
     }
+
+    public function jsonSerialize(): mixed
+    {
+        // TODO: Implement jsonSerialize() method.
+    }
 }
