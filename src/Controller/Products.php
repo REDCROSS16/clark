@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Component\Tools\Procent;
 use App\DTO\LowestPriceEnquiry;
+use App\Filter\PromotionsFilterInterface;
 use App\Service\Serializer\DTOSerializer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -20,7 +21,11 @@ class Products extends AbstractController
     }
 
     #[Route('/products/{id<\d>}/lowest-price', name: '', methods: ['POST'])]
-    public function lowestPrice(Request $request, int $id, DTOSerializer $serializer): Response
+    public function lowestPrice(
+        Request $request,
+        int $id,
+        DTOSerializer $serializer,
+        PromotionsFilterInterface $promotionsFilter): Response
     {
 
         if ($request->headers->has('force_fail')) {
@@ -37,7 +42,7 @@ class Products extends AbstractController
 
 
 
-        $responseContent = $serializer->serialize($lowestPriceEnquiry, 'json');
+        $responseContent = $serializer->serialize($modifiedEnquiry, 'json');
 
         return new Response($responseContent);
 //        1. deserialize json data into enquireDTO
