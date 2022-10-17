@@ -13,7 +13,7 @@ class Product
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private int $id;
+    private ?Product $product;
 
     #[ORM\Column]
     private int $price;
@@ -26,10 +26,24 @@ class Product
         $this->productPromotions = new ArrayCollection();
     }
 
-    public function getId(): int
+    /**
+     * @return Product|null
+     */
+    public function getProduct(): ?Product
     {
-        return $this->id;
+        return $this->product;
     }
+
+    /**
+     * @param Product|null $product
+     */
+    public function setProduct(?Product $product): void
+    {
+        $this->product = $product;
+    }
+
+
+
 
     public function getPrice(): int
     {
