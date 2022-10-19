@@ -52,12 +52,9 @@ class Products extends AbstractController
         $promotions = $this->entityManager->getRepository(Promotion::class)->findValidForProduct(
             $product,
             date_create_immutable($lowestPriceEnquiry->getRequestDate())
-        )
+        );
 
-
-
-        $modifiedEnquiry = $promotionsFilter->apply($lowestPriceEnquiry, $promotions);
-
+        $modifiedEnquiry = $promotionsFilter->apply($lowestPriceEnquiry, ...$promotions);
         $responseContent = $serializer->serialize($modifiedEnquiry, 'json');
 
         return new Response($responseContent);
