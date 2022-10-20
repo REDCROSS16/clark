@@ -155,19 +155,15 @@ class LowestPriceEnquiry implements PromotionEnquiryInterface
         $this->promotionId = $promotionId;
     }
 
-    /**
-     * @return string|null
-     */
+
     public function getPromotionName(): ?string
     {
         return $this->promotionName;
     }
 
-    /**
-     * @param string|null $promotionName
-     */
     public function setPromotionName(?string $promotionName): void
     {
+        $this->promotionName = $promotionName;
     }
 
     public function jsonSerialize(): mixed
