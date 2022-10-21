@@ -42,9 +42,6 @@ class Product
         $this->product = $product;
     }
 
-
-
-
     public function getPrice(): int
     {
         return $this->price;

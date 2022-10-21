@@ -42,12 +42,10 @@ class Products extends AbstractController
 
         $product = $this->productRepository->find($id);
 
-
-
         /** @var LowestPriceEnquiry $lowestPriceEnquiry */
         $lowestPriceEnquiry = $serializer->deserialize($request->getContent(), LowestPriceEnquiry::class, 'json');
 
-        $lowestPriceEnquiry->setProductId($product);
+        $lowestPriceEnquiry->setProduct($product);
 
         $promotions = $this->entityManager->getRepository(Promotion::class)->findValidForProduct(
             $product,
