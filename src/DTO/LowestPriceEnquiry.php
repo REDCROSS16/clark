@@ -165,9 +165,4 @@ class LowestPriceEnquiry implements PromotionEnquiryInterface
     {
         $this->promotionName = $promotionName;
     }
-
-    public function jsonSerialize(): mixed
-    {
-        // TODO: Implement jsonSerialize() method.
-    }
 }
