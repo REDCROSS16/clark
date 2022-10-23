@@ -31,6 +31,6 @@ class LowestPriceFilterTest extends ServiceTestCase
 
     private function promotionsDataProvider()
     {
-
+        // update it
     }
 }
