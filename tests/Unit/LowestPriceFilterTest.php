@@ -3,6 +3,7 @@
 namespace App\Tests\Unit;
 
 use App\DTO\LowestPriceEnquiry;
+use App\Entity\Promotion;
 use App\Filter\LowestPriceFilter;
 use App\Tests\ServiceTestCase;
 
@@ -29,8 +30,14 @@ class LowestPriceFilterTest extends ServiceTestCase
         // Then
     }
 
-    private function promotionsDataProvider()
+    private function promotionsDataProvider(): array
     {
-        // update it
+        $promotionOne = new Promotion();
+        $promotionOne->setName('Black');
+        $promotionOne->setAdjustment(0.5);
+        $promotionOne->setCriteria(['from' => '2022-11-25', 'to' => '2022-11-28']);
+        $promotionOne->setType('data_range_multiplier');
+
+        return [$promotionOne];
     }
 }
