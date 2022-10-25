@@ -23,8 +23,6 @@ class LowestPriceFilterTest extends ServiceTestCase
         $this->assertSame(50, $filteredEnquiry->getDiscountedPrice());
         $this->assertSame('Black friday', $filteredEnquiry->getPromotionName());
 
-        // Given
-
         // When
 
         // Then
