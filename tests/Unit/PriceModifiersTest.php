@@ -18,7 +18,7 @@ class PriceModifiersTest extends ServiceTestCase
 
         $dateRangeModifier = new DateRangeModifier();
 
-        $modifiedPrice = $dateRangeModifier->modify(100, 5, $promotion, $enquary);
+        $modifiedPrice = $dateRangeModifier->modify(100, 5, 'black friday', $enquary);
 
         $this->assertEquals(250, $modifiedPrice);
     }
