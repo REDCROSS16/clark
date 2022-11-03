@@ -8,7 +8,7 @@ use Symfony\Component\Serializer\Annotation\Ignore;
 class LowestPriceEnquiry implements PromotionEnquiryInterface
 {
     #[Ignore]
-    private ?Product $product;
+    private ?Product $product = null;
 
     private ?int $quantity;
 

@@ -9,7 +9,8 @@ use App\Tests\ServiceTestCase;
 
 class PriceModifiersTest extends ServiceTestCase
 {
-    function dateRangeMultiplierReturnsACorrectrlyModifiedPrice(): void
+    /** @test */
+    public function dateRangeMultiplierReturnsACorrectrlyModifiedPrice(): void
     {
         $enquary = new LowestPriceEnquiry();
         $enquary->setQuantity(5);

@@ -1,32 +1,11 @@
-version: '3.6'
+version: '3'
 
 services:
-    web:
-        build:
-            context: .
-            target: web
-            args:
-                XDEBUG: 1
-        environment:
-            FORCE_SSL: "false"
-            # For more config see: https://blog.denisbondar.com/post/phpstorm_docker_xdebug
-            PHP_IDE_CONFIG: "serverName=Docker"
-            XDEBUG_CONFIG: "client_host=192.168.120.1"
-            # App environment
-            APP_ENV: dev
-            DATABASE_URL: postgresql://root:root@database:5432/app
-        volumes:
-            - .:/srv/www:rw,cached
-            - ./var:/srv/www/var:rw
-            - ./public:/srv/www/public:rw,delegated
-        ports:
-            - "8000:80"
-        networks:
-            - internal
+###> doctrine/doctrine-bundle ###
 
-    # Priority for Postgres by you can also use MySql
+
     database:
-        image: postgres:${POSTGRES_VERSION:-13}-alpine
+        image: postgres:${POSTGRES_VERSION:-14}-alpine
         environment:
             POSTGRES_DB: ${POSTGRES_DB:-clark}
             POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-root}
@@ -35,32 +14,9 @@ services:
             - ./.docker/.pgsql-data:/var/lib/pgsql/data:rw,delegated
         ports:
             - "5432:5432"
-        networks:
-            - internal
+###< doctrine/doctrine-bundle ###
 
-    #    database:
-    #        image: mysql:${MYSQL_VERSION:-8.0}
-    #        environment:
-    #            MYSQL_DATABASE: ${MYSQL_DB:-app}
-    #            MYSQL_ROOT_PASSWORD: ${MYSQL_USER:-root}
-    #        volumes:
-    #            - ./.docker/.mysql-data:/var/lib/mysql:rw,delegated
-    #        ports:
-    #            - "3308:3306"
-    #        networks:
-    #            - internal
-
-    redis:
-        image: redis:alpine
-        ports:
-            - "6379:6379"
-        networks:
-            - internal
-
-networks:
-    internal:
-        driver: bridge
-        ipam:
-            driver: default
-            config:
-                -   subnet: 192.168.120.0/28
+volumes:
+###> doctrine/doctrine-bundle ###
+  db-data:
+###< doctrine/doctrine-bundle ###
