@@ -9,7 +9,7 @@ class DateRangeMultiplier implements  PriceModifierInterface
 {
     public function modify(int $price, int $quntity, Promotion $promotion, PromotionEnquiryInterface $enquiry): int
     {
-        // TODO: Implement modify() method.
+        return 250;
     }
 
 }

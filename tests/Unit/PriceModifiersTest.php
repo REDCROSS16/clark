@@ -22,11 +22,11 @@ class PriceModifiersTest extends ServiceTestCase
         $promotion->setCriteria(['from' => '2022-11-25', 'to' => '2022-11-28']);
         $promotion->setType('data_range_multiplier');
 
-        $dateRangeModifier = new DateRangeMultiplier();
+        $dateRangeMultiplier = new DateRangeMultiplier();
 
         // update
 
-        $modifiedPrice = $dateRangeModifier->modify(100, 5, $promotion, $enquary);
+        $modifiedPrice = $dateRangeMultiplier->modify(100, 5, $promotion, $enquary);
 
         $this->assertEquals(250, $modifiedPrice);
     }
