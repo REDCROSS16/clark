@@ -9,7 +9,12 @@ class DateRangeMultiplier implements  PriceModifierInterface
 {
     public function modify(int $price, int $quntity, Promotion $promotion, PromotionEnquiryInterface $enquiry): int
     {
-        return 250;
+        if ($requestDate >= $from && $requestDate < $to ) {
+            return $price * $quntity;
+        }
+
+
+        return ($price * $quntity) * $promotion->getAdjustment();
     }
 
 }
