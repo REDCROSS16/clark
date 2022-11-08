@@ -13,6 +13,7 @@ class DateRangeMultiplier implements  PriceModifierInterface
         $from = date_create($promotion->getCriteria()['from']);
         $to = date_create($promotion->getCriteria()['to']);
 
+
         if ($requestDate >= $from && $requestDate < $to ) {
             return $price * $quantity;
         }

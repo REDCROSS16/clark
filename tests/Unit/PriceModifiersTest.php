@@ -28,6 +28,6 @@ class PriceModifiersTest extends ServiceTestCase
 
         $modifiedPrice = $dateRangeMultiplier->modify(100, 5, $promotion, $enquary);
 
-        $this->assertEquals(250, $modifiedPrice);
+        $this->assertEquals(500, $modifiedPrice);
     }
 }
