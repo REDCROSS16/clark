@@ -23,9 +23,6 @@ class PriceModifiersTest extends ServiceTestCase
         $promotion->setType('data_range_multiplier');
 
         $dateRangeMultiplier = new DateRangeMultiplier();
-
-        // update
-
         $modifiedPrice = $dateRangeMultiplier->modify(100, 5, $promotion, $enquary);
 
         $this->assertEquals(500, $modifiedPrice);
