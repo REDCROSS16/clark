@@ -26,5 +26,12 @@ class PriceModifiersTest extends ServiceTestCase
         $modifiedPrice = $dateRangeMultiplier->modify(100, 5, $promotion, $enquary);
 
         $this->assertEquals(500, $modifiedPrice);
+
+
+        $evenItemsMultiplier = new EvenItemsMultiplier();
+
+        $modifiedPrice = $evenItemsMultiplier->modify(100, 5, $promotion, $enquary);
+
+        $this->assertSame(300, $modifiedPrice);
     }
 }
