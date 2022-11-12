@@ -27,6 +27,12 @@ class PriceModifiersTest extends ServiceTestCase
 
         $this->assertEquals(500, $modifiedPrice);
 
+        $promotion = new Promotion();
+        $promotion->setName('Bue one get one free');
+        $promotion->setAdjustment(0.5);
+        $promotion->setCriteria(['minimum_quantity' => 2]);
+        $promotion->setType('even_times_multiplier');
+
 
         $evenItemsMultiplier = new EvenItemsMultiplier();
 
