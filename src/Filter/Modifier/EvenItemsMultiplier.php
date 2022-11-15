@@ -17,5 +17,6 @@ class EvenItemsMultiplier implements PriceModifierInterface
         $oddCount = $quntity % 2;
         $evenCount = $quntity - $oddCount;
 
+        // todo: update her
     }
 }
