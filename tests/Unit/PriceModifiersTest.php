@@ -5,6 +5,7 @@ namespace App\Tests\Unit;
 use App\DTO\LowestPriceEnquiry;
 use App\Entity\Promotion;
 use App\Filter\Modifier\DateRangeMultiplier;
+use App\Filter\Modifier\EvenItemsMultiplier;
 use App\Tests\ServiceTestCase;
 
 class PriceModifiersTest extends ServiceTestCase
