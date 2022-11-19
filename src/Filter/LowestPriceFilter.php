@@ -4,18 +4,28 @@ namespace App\Filter;
 
 use App\DTO\PromotionEnquiryInterface;
 use App\Entity\Promotion;
+use App\Filter\Modifier\Factory\PriceModifierFactoryInterface;
 
 class LowestPriceFilter implements PromotionsFilterInterface
 {
+    public function __construct(private readonly PriceModifierFactoryInterface $priceModifierFactor)
+    {
+    }
 
-    public function apply(PromotionEnquiryInterface $enquiry, Promotion ...$promotion): PromotionEnquiryInterface
+    public function apply(PromotionEnquiryInterface $enquiry, Promotion ...$promotions): PromotionEnquiryInterface
     {
 
-        $price = $enquiry->getProduct()->getPrice();
-        $quantity = $enquiry->getQuantity();
-        $lowestPrice = $price * $quantity;
+//        $price = $enquiry->getProduct()->getPrice();
+//        $quantity = $enquiry->getQuantity();
+//        $lowestPrice = $price * $quantity;
 
-        $priceModifier = $this->priceModifierFactor->create();
+        foreach ($promotions as $promotion)  {
+            $priceModifier = $this->priceModifierFactor->create($promotion->getType());
+
+            dd($priceModifier);
+        }
+
+
 
         $enquiry->setDiscountedPrice(50);
         $enquiry->setPrice(500);

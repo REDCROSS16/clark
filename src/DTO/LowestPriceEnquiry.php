@@ -8,7 +8,7 @@ use Symfony\Component\Serializer\Annotation\Ignore;
 class LowestPriceEnquiry implements PromotionEnquiryInterface
 {
     #[Ignore]
-    private ?Product $product = null;
+    private Product $product;
 
     private ?int $quantity;
 
@@ -18,18 +18,18 @@ class LowestPriceEnquiry implements PromotionEnquiryInterface
 
     private ?string $requestDate;
 
-    private ?int $price;
+    private int $price;
 
-    private ?int $discountedPrice;
+    private int $discountedPrice;
 
-    private ?int $promotionId;
+    private int $promotionId;
 
     private ?string $promotionName;
 
     /**
-     * @return Product|null
+     * @return Product
      */
-    public function getProduct(): ?Product
+    public function getProduct(): Product
     {
         return $this->product;
     }
@@ -108,17 +108,17 @@ class LowestPriceEnquiry implements PromotionEnquiryInterface
     }
 
     /**
-     * @return int|null
+     * @return int
      */
-    public function getPrice(): ?int
+    public function getPrice(): int
     {
         return $this->price;
     }
 
     /**
-     * @param int|null $price
+     * @param int $price
      */
-    public function setPrice(?int $price): void
+    public function setPrice(int $price): void
     {
         $this->price = $price;
     }

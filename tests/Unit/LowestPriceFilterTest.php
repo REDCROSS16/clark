@@ -22,10 +22,6 @@ class LowestPriceFilterTest extends ServiceTestCase
         $this->assertSame(500, $filteredEnquiry->getPrice());
         $this->assertSame(50, $filteredEnquiry->getDiscountedPrice());
         $this->assertSame('Black friday', $filteredEnquiry->getPromotionName());
-
-        // When
-
-        // Then
     }
 
     private function promotionsDataProvider(): array
@@ -34,7 +30,7 @@ class LowestPriceFilterTest extends ServiceTestCase
         $promotionOne->setName('Black');
         $promotionOne->setAdjustment(0.5);
         $promotionOne->setCriteria(['from' => '2022-11-25', 'to' => '2022-11-28']);
-        $promotionOne->setType('data_range_multiplier');
+        $promotionOne->setType('date_range_multiplier');
 
         return [$promotionOne];
     }
