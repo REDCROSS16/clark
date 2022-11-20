@@ -22,16 +22,16 @@ class LowestPriceFilter implements PromotionsFilterInterface
         foreach ($promotions as $promotion)  {
             $priceModifier = $this->priceModifierFactor->create($promotion->getType());
 
-            dd($priceModifier);
+            $enquiry->setDiscountedPrice(50);
+            $enquiry->setPrice(500);
+            $enquiry->setPromotionId(2);
+            $enquiry->setPromotionName('Black friday');
+
+            return $enquiry;
         }
 
 
 
-        $enquiry->setDiscountedPrice(50);
-        $enquiry->setPrice(500);
-        $enquiry->setPromotionId(2);
-        $enquiry->setPromotionName('Black friday');
 
-        return $enquiry;
     }
 }

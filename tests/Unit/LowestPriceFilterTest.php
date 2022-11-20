@@ -16,7 +16,6 @@ class LowestPriceFilterTest extends ServiceTestCase
         $enquiry = new LowestPriceEnquiry();
         $promotions = $this->promotionsDataProvider();
         $lowestPriceFilter = $this->container->get(LowestPriceFilter::class);
-
         $filteredEnquiry = $lowestPriceFilter->apply($enquiry, ...$promotions);
 
         $this->assertSame(500, $filteredEnquiry->getPrice());
