@@ -12,7 +12,6 @@ class LowestPriceFilterTest extends ServiceTestCase
     /** @test */
     public function lowest_price_promotions_filtering_is_applied_correctly(): void
     {
-
         $enquiry = new LowestPriceEnquiry();
         $promotions = $this->promotionsDataProvider();
         $lowestPriceFilter = $this->container->get(LowestPriceFilter::class);
