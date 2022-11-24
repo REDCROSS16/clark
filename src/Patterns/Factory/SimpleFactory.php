@@ -2,7 +2,11 @@
 
 namespace App\Patterns\Factory;
 
-class SimpleFactory
+class SimpleFactory implements SimpleFactoryInterface
 {
+    public function create(): SimpleFactoryInterface
+    {
+        // TODO: Implement create() method.
+    }
 
 }
