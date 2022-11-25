@@ -4,9 +4,9 @@ namespace App\Patterns\Factory;
 
 class SimpleFactory implements SimpleFactoryInterface
 {
-    public function create(): SimpleFactoryInterface
+    public function create(string $name, string $surname): User
     {
-        // TODO: Implement create() method.
+        return new User($name, $surname);
     }
 
 }

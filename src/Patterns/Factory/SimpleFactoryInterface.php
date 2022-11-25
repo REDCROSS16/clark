@@ -4,5 +4,5 @@ namespace App\Patterns\Factory;
 
 interface SimpleFactoryInterface
 {
-    public function create(): self;
+    public function create(string $name, string $surname);
 }
