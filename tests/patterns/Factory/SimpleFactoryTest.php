@@ -14,5 +14,6 @@ class SimpleFactoryTest extends TestCase
         $user = $factory->create('alex', 'podolnitsky');
 
         $this->assertInstanceOf(User::class, $user);
+        $this->assertSame('alex', $user->getName());
     }
 }
