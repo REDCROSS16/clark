@@ -8,6 +8,20 @@ class CarEngine implements VehicleEngineInterface
     private int $maxRPM;
     private string $fuelType;
 
+    public function getCylinderAmount(): int
+    {
+        return $this->cylinderAmount;
+    }
+
+    public function getMaxRPM(): int
+    {
+        return $this->maxRPM;
+    }
+
+    public function getFuelType(): string
+    {
+        return $this->fuelType;
+    }
 
     public function setCylindersAmount(int $cylinderAmount): void
     {
@@ -21,6 +35,11 @@ class CarEngine implements VehicleEngineInterface
 
     public function setFuelType(string $fuelType)
     {
-        // TODO: Implement setFuelType() method.
+        $this->fuelType = $fuelType;
+    }
+
+    public function __toString(): string
+    {
+        return "This is a $this->fuelType with $this->maxRPM and $this->cylinderAmount";
     }
 }
