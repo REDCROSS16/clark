@@ -2,18 +2,20 @@
 
 namespace App\Tests\patterns\Factory;
 
-use App\Patterns\Factory\SimpleFactory;
-use App\Patterns\Factory\User;
+
+use App\Patterns\Creational\SimpleFactory\CarEngineFactory;
+use App\Patterns\Creational\SimpleFactory\VehicleEngineInterface;
 use PHPUnit\Framework\TestCase;
 
 class SimpleFactoryTest extends TestCase
 {
-    public function testCreateUserFactory()
+    public function testIsFactoryWork()
     {
-        $factory = new SimpleFactory();
-        $user = $factory->create('alex', 'podolnitsky');
+        $factory = new CarEngineFactory();
 
-        $this->assertInstanceOf(User::class, $user);
-        $this->assertSame('alex', $user->getName());
+        $engine = $factory->makeCarEngine('GAS');
+
+        $this->assertInstanceOf(VehicleEngineInterface::class, $engine);
+        $this->assertSame(2000, $engine->getMaxRPM());
     }
 }

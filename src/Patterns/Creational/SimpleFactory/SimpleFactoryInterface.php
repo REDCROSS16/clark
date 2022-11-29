@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Patterns\Factory;
+namespace App\Patterns\Creational\SimpleFactory;
 
 interface SimpleFactoryInterface
 {
