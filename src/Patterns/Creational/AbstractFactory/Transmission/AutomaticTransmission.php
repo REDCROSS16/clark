@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Patterns\Creational\AbstractFactory;
+namespace App\Patterns\Creational\AbstractFactory\Transmission;
+
+use App\Patterns\Creational\AbstractFactory\TransmissionInterface;
 
 class AutomaticTransmission implements TransmissionInterface
 {
