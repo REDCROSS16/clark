@@ -23,4 +23,9 @@ class DesktopComputer
 
         return $this->components[0];
     }
+
+    public function addComponent(string $component): void
+    {
+        array_push($this->components, $component);
+    }
 }
