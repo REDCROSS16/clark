@@ -11,7 +11,7 @@ class CarElectronics
         $this->type = $type;
     }
 
-    public function getAllSystemEnable(): void
+    public function getAllSystemEnable(): string
     {
         return 'All system of ' . $this->type . ' enabled';
     }
