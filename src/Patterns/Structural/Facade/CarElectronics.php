@@ -15,4 +15,10 @@ class CarElectronics
     {
         return 'All system of ' . $this->type . ' enabled';
     }
+
+    public function prepareEngineToStart(CarEngine $carEngine)
+    {
+        $carEngine->enableFuelPumpOn();
+        $carEngine->enableSparkles();
+    }
 }

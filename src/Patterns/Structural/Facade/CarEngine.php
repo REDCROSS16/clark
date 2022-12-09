@@ -31,7 +31,7 @@ class CarEngine
 
     }
 
-    public function enableSparkles(bool $isSparkles): void
+    public function enableSparkles(): void
     {
         if (!$this->isSparkles) {
             $this->isSparkles = true;
