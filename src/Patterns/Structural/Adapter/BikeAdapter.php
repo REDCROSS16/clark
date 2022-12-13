@@ -2,6 +2,7 @@
 
 namespace App\Patterns\Structural\Adapter;
 
+// Adapter between car and driver
 class BikeAdapter implements FourWheelVehiclesInterface
 {
     private Bike $bike;
