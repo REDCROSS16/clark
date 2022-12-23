@@ -13,7 +13,7 @@ class Mike implements DriverInterface
 
     public function getName(): string
     {
-        // TODO: Implement getName() method.
+        return $this->name;
     }
 
     public function startEngine(): void
