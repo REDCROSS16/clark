@@ -18,16 +18,16 @@ class Mike implements DriverInterface
 
     public function startEngine(): void
     {
-        // TODO: Implement startEngine() method.
+        echo 'ggggg';
     }
 
     public function startDriving(): void
     {
-        // TODO: Implement startDriving() method.
+        echo 'car is riding';
     }
 
     public function crash(): void
     {
-        // TODO: Implement crash() method.
+        echo 'lock';
     }
 }
