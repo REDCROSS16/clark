@@ -1,11 +1,12 @@
 <?php
 
+namespace App\Patterns\Structural\Bridge;
 
-$driverJohn = new \App\Patterns\Structural\Bridge\John('John');
-$mike = new \App\Patterns\Structural\Bridge\Mike('Mike');
+$driverJohn = new John('John');
+$mike = new Mike('Mike');
 
-$bike = new \App\Patterns\Structural\Bridge\Bike($driverJohn);
-$car = new \App\Patterns\Structural\Bridge\Car($mike);
+$bike = new Bike($driverJohn);
+$car = new Car($mike);
 
 
 function exploreBridgeDriving(Vechicle $vechicle) {
