@@ -10,7 +10,7 @@ class CarDatabase
 
     public function addCar(string $owner, string $manufacturer, string $color, string $bodyType, string $transmissionType)
     {
-        $carVariation = $this->getCarVariations($color, $bodyType, $transmissionType);
+        $carVariation = $this->getCarVariation($color, $bodyType, $transmissionType);
 
         if (null === $carVariation) {
             $carVariation = new CarVariation($color, $bodyType, $transmissionType);
@@ -34,7 +34,7 @@ class CarDatabase
     }
 
 
-    public function printCertainCars()
+    public function printCertainCars(): void
     {
         echo 'Cars:';
         foreach ( $this->certainCars as $car) {
@@ -45,7 +45,7 @@ class CarDatabase
         }
     }
 
-    public function printCarVariations()
+    public function printCarVariations(): void
     {
         echo 'Variations: ' . PHP_EOL;
         foreach ($this->carVariations as $variation) {
